@@ -128,11 +128,9 @@ div>img {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 1em;
+    justify-items: center;
 }
 
-.grid-container>div {
-    padding: 1em;
-}
 
 .mini-card-shadow{
     margin: 10px 0 10px 0;

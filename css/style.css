@@ -1,5 +1,10 @@
 body {
     margin: 0;
+    background-color: #dedede;
+}
+
+.container {
+    width: 100%;
 }
 
 div.center {
@@ -10,6 +15,7 @@ div.center {
 ul.topnav {
     list-style-type: none;
     margin: 0;
+    padding-left: 10%;
     overflow: hidden;
     background-color: #4dd2d2;
     background-image: linear-gradient(to left, #092331, #4dd2d2);
@@ -58,13 +64,13 @@ ul.topnav li.logo {
 ul.topnav li.left a.text-style-1 {
     color: #002b50;
     border-style: solid;
-    border-color: #002b50 #002b50 #002b50 ;
+    border-color: #002b50 #002b50 #002b50;
 }
 
 ul.topnav li.left a.text-style-2 {
     color: #41b3b5;
     border-style: solid;
-    border-color: #002b50 #002b50 #002b50 ;
+    border-color: #002b50 #002b50 #002b50;
     background-color: #002b50;
 }
 
@@ -76,6 +82,45 @@ ul.topnav div.left-padding {
     ul.topnav li.right, ul.topnav li {
         float: none;
     }
+}
+
+.card-shadow {
+    position: relative;
+    width: 100%;
+    height: 10rem;
+    margin: 20px 0 20px 0;
+    background-color: #f0f1ef;
+    z-index: 1;
+    box-shadow: 5px 5px 5px 0px rgba(192, 192, 192, 0.75);
+}
+
+div.text-card {
+    float: left;
+    padding: 1rem 0 1rem 2rem;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #707070
+}
+
+div.text-card-meta {
+    float: left;
+}
+
+div.text-card-data {
+    float: left;
+    font-weight: bold;
+    color: #092432;
+}
+
+img {
+    border-radius: 50%;
+}
+
+div>img{
+    float: left;
+    height: -webkit-fill-available;
+    width: auto !important;
+    padding: 18px;
 }
 
 .col-1 {

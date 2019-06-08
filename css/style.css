@@ -79,7 +79,8 @@ ul.topnav div.left-padding {
 }
 
 @media screen and (max-width: 600px) {
-    ul.topnav li.right, ul.topnav li {
+    ul.topnav li.right,
+    ul.topnav li {
         float: none;
     }
 }
@@ -131,9 +132,17 @@ div>img {
     justify-items: center;
 }
 
+.text-mini-card>p{
+    display: contents;
+}
 
-.mini-card-shadow{
+.mini-card-shadow {
     margin: 10px 0 10px 0;
+}
+
+.mini-card-shadow:hover, .mini-card-shadow:hover>div.container>div.text-card{
+    color: white;
+    background-color: #092432;
 }
 
 .col-1 {

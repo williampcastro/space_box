@@ -116,11 +116,26 @@ img {
     border-radius: 50%;
 }
 
-div>img{
+div>img {
     float: left;
     height: -webkit-fill-available;
     width: auto !important;
     padding: 18px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+}
+
+.grid-container>div {
+    padding: 1em;
+}
+
+.mini-card-shadow{
+    margin: 10px 0 10px 0;
 }
 
 .col-1 {

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #dedede;
+  background-image: linear-gradient(to top, #ffffff, #dedede);
 }
 
 .container {
@@ -97,25 +97,26 @@ ul.topnav div.left-padding {
 
 div.text-card {
   float: left;
-  padding: 1rem 0 1rem 2rem;
+  padding: 2.5rem 0 2rem 2rem;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   color: #707070;
 }
 
-div.text-card-meta {
-  float: left;
+.text-card-meta {
+  text-align: right;
 }
 
-div.text-card-data {
-  float: left;
+.text-card-data {
+  text-align: left;
   font-weight: bold;
   color: #092432;
+  padding-left: 10px;
 }
 
 img {
   border-radius: 50%;
-  width:200px;
+  width: 200px;
 }
 
 div > img {
@@ -127,7 +128,7 @@ div > img {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat( auto-fit, minmax(380px, 1fr) );
   grid-column-gap: 10px;
   grid-row-gap: 1em;
   justify-items: center;
@@ -159,9 +160,10 @@ div > .circle > p {
   font-family: "Open Sans", sans-serif;
 }
 
-.mini-card-shadow:hover, div > .circle > p {
-    color: #092432 !important;  
-  }
+.mini-card-shadow:hover,
+div > .circle > p {
+  color: #092432 !important;
+}
 
 .text-mini-card > p {
   display: table-row;

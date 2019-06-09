@@ -81,6 +81,18 @@
 
     }
 
+    const showProfileSelected = (event) => {
+
+        let indexProfile = event.currentTarget.id.split("-")[1];
+
+        let profile = dados[indexProfile];
+
+        document.getElementById('nome').innerHTML = profile.nome;
+        document.getElementById('cargo').innerHTML = profile.cargo;
+        document.getElementById('idade').innerHTML = profile.idade;
+
+    }
+
     const createMiniCardCompoenet = (dado, dadoIndex) => {
 
         //     let divMiniCard = document.createElement('div');
@@ -92,6 +104,8 @@
 
         let divMiniCardShadown = document.createElement('div');
         divMiniCardShadown.className = 'card-shadow mini-card-shadow';
+        divMiniCardShadown.id = `profile-${dadoIndex}`;
+        divMiniCardShadown.addEventListener('click', showProfileSelected);
 
         refereceElement = document.getElementsByClassName('grid-container')[0];
         refereceElement.appendChild(divMiniCardShadown);

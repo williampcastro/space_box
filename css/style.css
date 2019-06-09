@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-image: linear-gradient(to top, #ffffff, #dedede);
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -160,7 +161,12 @@ div > .circle > p {
   font-family: "Open Sans", sans-serif;
 }
 
-.mini-card-shadow:hover,
+.mini-card-shadow:hover,cd
+div > .circle > p {
+  color: #092432 !important;
+}
+
+.mini-card-shadow:focus,
 div > .circle > p {
   color: #092432 !important;
 }
@@ -171,6 +177,12 @@ div > .circle > p {
 
 .mini-card-shadow {
   margin: 10px 0 10px 0;
+}
+
+.mini-card-shadow:focus,
+.mini-card-shadow:focus > div.container > div.text-card {
+  color: white;
+  background-color: #092432;
 }
 
 .mini-card-shadow:hover,

@@ -115,6 +115,7 @@ div.text-card-data {
 
 img {
   border-radius: 50%;
+  width:200px;
 }
 
 div > img {
@@ -147,7 +148,7 @@ div > img {
   width: 2rem;
   height: 2rem;
   background: #4dd2d2;
-  position: fixed;
+  position: absolute;
   margin: 1.5rem 0 0 7.5rem;
 }
 
@@ -163,7 +164,7 @@ div > .circle > p {
   }
 
 .text-mini-card > p {
-  display: contents;
+  display: table-row;
 }
 
 .mini-card-shadow {

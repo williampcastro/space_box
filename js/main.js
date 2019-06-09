@@ -63,7 +63,14 @@
           'nome': 'Gabriel',
           'cargo': 'Desenvolvedor',
           'idade': 28
-        }
+        },
+        { 
+            'id': 19,
+            'foto': 'foto-gabriel.jpg',
+            'nome': 'Gabriel',
+            'cargo': 'Desenvolvedor',
+            'idade': 28
+          }
       ]
 
     var profileSelected = {
@@ -76,13 +83,13 @@
 
     const loadComponents = () => {
 
-        dados.forEach( dado => {
-            createMiniCardCompoenet(dado);            
+        dados.forEach( (dado, dadoIndex) => {
+            createMiniCardCompoenet(dado, dadoIndex);            
         });
 
     }
 
-    const createMiniCardCompoenet = (dado) => {
+    const createMiniCardCompoenet = (dado, dadoIndex) => {
 
     //     let divMiniCard = document.createElement('div');
     //     divMiniCard.className = 'col-12 grid-container';
@@ -102,22 +109,22 @@
         
         let divContainer = document.createElement('div');
         divContainer.className = 'container';
-        divContainer.id=`container-${dado.id}`;
+        divContainer.id=`container-${dadoIndex}`;
         
-        refereceElement = document.getElementsByClassName('card-shadow mini-card-shadow')[parseInt(dado.id)-1];
+        refereceElement = document.getElementsByClassName('card-shadow mini-card-shadow')[dadoIndex];
         divMiniCardShadown.appendChild(divCircle);
         refereceElement.appendChild(divContainer);
         
         let textCircle = document.createElement('p');
         textCircle.innerHTML = dado.id;
-        refereceElement = document.getElementsByClassName('circle')[parseInt(dado.id)-1];
+        refereceElement = document.getElementsByClassName('circle')[dadoIndex];
         refereceElement.appendChild(textCircle)
 
         let divChildrenContainer = document.createElement('div');
         divChildrenContainer.className='col-2';
         let divChildrenContainer2 = document.createElement('div');
         divChildrenContainer2.className = 'col-2 text-card text-mini-card';
-        refereceElement = document.getElementById(`container-${dado.id}`);
+        refereceElement = document.getElementById(`container-${dadoIndex}`);
         refereceElement.appendChild(divChildrenContainer);
         refereceElement.appendChild(divChildrenContainer2);
 

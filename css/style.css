@@ -129,7 +129,7 @@ div > img {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(380px, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
   grid-column-gap: 10px;
   grid-row-gap: 1em;
   justify-items: center;

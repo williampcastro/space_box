@@ -29,7 +29,7 @@
   },
   { 
     "id": 5,
-    "foto": "foto-diego.jpg",
+    "foto": "../images/05.jpg",
     "nome": "Diego",
     "cargo": "Desenvolvedor",
     "idade": 24
@@ -57,68 +57,6 @@
   },
   { 
     "id": 9,
-    "foto": "foto-gabriel.jpg",
-    "nome": "Gabriel",
-    "cargo": "Desenvolvedor",
-    "idade": 28
-  },{ 
-    "id": 11,
-    "foto": "foto-alberto.jpg",
-    "nome": "Alberto",
-    "cargo": "Presidente",
-    "idade": 20 
-  },
-  { 
-    "id":12,
-    "foto": "foto-bruno.jpg",
-    "nome": "Bruno",
-    "cargo": "Diretor",
-    "idade": 21 
-  },
-  { 
-    "id": 13,
-    "foto": "foto-helena.jpg",
-    "nome": "Helena",
-    "cargo": "Gerente",
-    "idade": 22
-  },
-  { 
-    "id": 14,
-    "foto": "foto-fernanda.jpg",
-    "nome": "Fernanda",
-    "cargo": "Desenvolvedor",
-    "idade": 23
-  },
-  { 
-    "id": 15,
-    "foto": "foto-diego.jpg",
-    "nome": "Diego",
-    "cargo": "Desenvolvedor",
-    "idade": 24
-  },
-  { 
-    "id": 16,
-    "foto": "foto-iris.jpg",
-    "nome": "Iris",
-    "cargo": "Desenvolvedor",
-    "idade": 25 
-  },
-  { 
-    "id": 17,
-    "foto": "foto-hugo.jpg",
-    "nome": "Hugo",
-    "cargo": "Desenvolvedor",
-    "idade": 26 
-  },
-  { 
-    "id": 18,
-    "foto": "foto-gustavo.jpg",
-    "nome": "Gustavo",
-    "cargo": "Desenvolvedor",
-    "idade": 27
-  },
-  { 
-    "id": 19,
     "foto": "foto-gabriel.jpg",
     "nome": "Gabriel",
     "cargo": "Desenvolvedor",

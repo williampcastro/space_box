@@ -94,7 +94,6 @@
         if(element){
             element.appendChild(elementToAppend)
         } else {
-            debugger
             let referencedElement = null;
             if (typeReference === 'id') referencedElement = document.getElementById(referenceName);
             else if (typeReference === 'class') referencedElement = document.getElementsByClassName(referenceName)[indexReference];

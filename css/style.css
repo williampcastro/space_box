@@ -129,7 +129,7 @@ div > img {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-column-gap: 10px;
   grid-row-gap: 1em;
   justify-items: center;
@@ -139,10 +139,6 @@ div > img {
   padding: 3.5rem 0 1rem 2rem !important;
   margin-left: -25px;
   background: none !important;
-}
-
-#name-mini-card {
-  font-weight: bold;
 }
 
 .circle {
@@ -159,16 +155,7 @@ div > .circle > p {
   margin-top: 15%;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
-}
-
-.mini-card-shadow:hover,cd
-div > .circle > p {
-  color: #092432 !important;
-}
-
-.mini-card-shadow:focus,
-div > .circle > p {
-  color: #092432 !important;
+  color: #002b50 !important;
 }
 
 .text-mini-card > p {
@@ -179,16 +166,15 @@ div > .circle > p {
   margin: 10px 0 10px 0;
 }
 
-.mini-card-shadow:focus,
-.mini-card-shadow:focus > div.container > div.text-card {
-  color: white;
+.mini-card-shadow:hover,
+.mini-card-shadow:hover > div.container > div.text-card > p{
+  color: white !important;
   background-color: #092432;
 }
 
-.mini-card-shadow:hover,
-.mini-card-shadow:hover > div.container > div.text-card {
-  color: white;
-  background-color: #092432;
+#name-mini-card {
+  font-weight: bold;
+  color: #002b50;
 }
 
 .col-1 {

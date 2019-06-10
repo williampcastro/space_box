@@ -67,74 +67,71 @@
     ];
 
     const loadComponents = () => {
-
-        dados.forEach((dado, dadoIndex) => {
-            createMiniCardCompoenet(dado, dadoIndex);
+        dados.forEach((dado, profileIndex) => {
+            createMiniCardComponent(dado, profileIndex);
         });
-
     }
 
-    const createMiniCardCompoenet = (dado, dadoIndex) => {
+    const factoryElement = (elementType, className, id, text, eventName, functionName) => {
+        let element = document.createElement(elementType);
+        if (className) element.className = className;
+        if (id) element.id = id;
+        if(text) element.innerHTML = text;
+        if (eventName && functionName) element.addEventListener(eventName, functionName);
+        return element;
+    }
 
-        let divMiniCardShadown = document.createElement('div');
-        divMiniCardShadown.className = 'card-shadow mini-card-shadow';
-        divMiniCardShadown.id = `profile-${dadoIndex}`;
-        divMiniCardShadown.addEventListener('click', showProfileSelected);
+    const factoryImageElement = (elementType, className, id, alt, atribute, valueAtribute) => {
+        let img = document.createElement(elementType);
+        if(className) img.className = className;
+        if(id) img.id = id;
+        if(alt) img.alt = alt;
+        if(atribute && valueAtribute) img.setAttribute(atribute, valueAtribute);
+        return img;
+    }
 
-        refereceElement = document.getElementsByClassName('grid-container')[0];
-        refereceElement.appendChild(divMiniCardShadown);
+    const appendElement = (element, elementToAppend, referenceName, typeReference, indexReference) => {
+        if(element){
+            element.appendChild(elementToAppend)
+        } else {
+            debugger
+            let referencedElement = null;
+            if (typeReference === 'id') referencedElement = document.getElementById(referenceName);
+            else if (typeReference === 'class') referencedElement = document.getElementsByClassName(referenceName)[indexReference];
+            referencedElement.appendChild(elementToAppend);
+        }
+    }
 
-        let divCircle = document.createElement('div');
-        divCircle.className = 'circle';
+    const createMiniCardComponent = (profile, profileIndex) => {
 
-        let divContainer = document.createElement('div');
-        divContainer.className = 'container';
-        divContainer.id = `container-${dadoIndex}`;
+        let divMiniCardShadown = factoryElement('div','card-shadow mini-card-shadow', `profile-${profileIndex}`, null, 'click', showProfileSelected);
+        let divCircle = factoryElement('div','circle');
+        let divContainer = factoryElement('div','container',`container-${profileIndex}`);
+        let pTextCircle = factoryElement('p', null, null, profile.id);
+        let divChildContainer = factoryElement('div', 'col-2');
+        let divChildContainer2 = factoryElement('div', 'col-2 text-card text-mini-card');
+        let containerImg = factoryElement('div', 'container');
+        let nameElement = factoryElement('p', null, 'name-mini-card', profile.nome);
+        let officeElement = factoryElement('p', null, 'office-mini-card', profile.cargo);
+        let img = factoryImageElement('img', null, 'image-mini-card', 'Avatar', 'src', profile.foto);
 
-        refereceElement = document.getElementsByClassName('card-shadow mini-card-shadow')[dadoIndex];
-        divMiniCardShadown.appendChild(divCircle);
-        refereceElement.appendChild(divContainer);
-
-        let textCircle = document.createElement('p');
-        textCircle.innerHTML = dado.id;
-        refereceElement = document.getElementsByClassName('circle')[dadoIndex];
-        refereceElement.appendChild(textCircle)
-
-        let divChildrenContainer = document.createElement('div');
-        divChildrenContainer.className = 'col-2';
-        let divChildrenContainer2 = document.createElement('div');
-        divChildrenContainer2.className = 'col-2 text-card text-mini-card';
-        refereceElement = document.getElementById(`container-${dadoIndex}`);
-        refereceElement.appendChild(divChildrenContainer);
-        refereceElement.appendChild(divChildrenContainer2);
-
-        let containerImg = document.createElement('div');
-        containerImg.className = 'container';
-        divChildrenContainer.appendChild(containerImg);
-        let img = document.createElement('img');
-        img.id = 'image-mini-card';
-        img.alt = 'Avatar';
-        img.setAttribute('src', dado.foto);
-        containerImg.appendChild(img);
-
-
-        let text = document.createElement('p');
-        text.innerHTML = dado.nome;
-        text.id = "name-mini-card";
-        divChildrenContainer2.appendChild(text);
-        text = document.createElement('p');
-        text.innerHTML = dado.cargo;
-        text.id = "office-mini-card";
-        divChildrenContainer2.appendChild(text);
+        appendElement(null, divMiniCardShadown, 'grid-container', 'class', 0);
+        appendElement(divMiniCardShadown, divCircle);
+        appendElement(null, divContainer, 'card-shadow mini-card-shadow', 'class', profileIndex);
+        appendElement(null, pTextCircle,'circle', 'class', profileIndex);
+        appendElement(null, divChildContainer, `container-${profileIndex}`, 'id');
+        appendElement(null, divChildContainer2, `container-${profileIndex}`, 'id');
+        appendElement(divChildContainer, containerImg);
+        appendElement(containerImg, img);
+        appendElement(divChildContainer2, nameElement);
+        appendElement(divChildContainer2, officeElement);
 
     }
 
     const showProfileSelected = (event) => {
 
         let indexProfile = event.currentTarget.id.split("-")[1];
-
         let profile = dados[indexProfile];
-
         document.getElementById('selected-nome').innerHTML = profile.nome;
         document.getElementById('selected-cargo').innerHTML = profile.cargo;
         document.getElementById('selected-idade').innerHTML = profile.idade;

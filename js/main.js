@@ -131,11 +131,11 @@
 
         let indexProfile = event.currentTarget.id.split("-")[1];
         let profile = dados[indexProfile];
-        document.getElementById('selected-nome').innerHTML = profile.nome;
-        document.getElementById('selected-cargo').innerHTML = profile.cargo;
-        document.getElementById('selected-idade').innerHTML = profile.idade;
-        document.getElementById('selected-foto').src = profile.foto;
-
+        let arrTags = ['nome','cargo', 'idade', 'foto'];
+        for(let tag of arrTags){
+            let source = (tag === 'foto') ? 'src' : 'innerHTML';
+            document.getElementById(`selected-${tag}`)[source] = profile[tag];
+        }
     }
 
 
